@@ -1,37 +1,369 @@
 extends ./jade/_layout.jade
 block post
-	//- aquí empieza el contenido del post
-	h2 titulo de sección
-	p contenido de un parrafo
-	p texto y un enlace
-		a(href="http://frontendlabs.io/") Frontendlabs.io
-	p texto que contiene el nombre de una
-		span(class="inline_folder") carpeta de un
-		span(class="inline_file") archivo y de un
-		span(class="inline_code") codigo
-	pre(class="prettyprint lang-js")
-		code.
-			var hola = 'ejemplo de string';
-	br
+  //- aquí empieza el contenido del post
+  p Según ruby-lang.org, "Ruby es un lenguaje de programación dinámico y de código 
+    | abierto enfocado en la simplicidad y la productividad. Su elegenate sintaxis 
+    | se siente natural al leerla y fácil al escribirla". Este lenguaje fue creado por 
+    a(href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto") Yukihiro "Matz" Matsumoto, quien combinó sus lenguajes 
+    | favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creo uno nuevo que incluyera los paradigmas
+    | de programación funcional como imperativa.
+  p Desde su publicación en 1995, Ruby ha incrementado año tras año la cantidad de adeptos 
+    | programadores. Considerandolo ya en el top 10 de lenguajes segun el 
+    a(href="http://www.tiobe.com/tiobe_index?page=index") índice TIOBE.com
+    | .
+  p Muchos definen a Ruby un lenguaje simple en apariencia, pero complejo por dentro; tal igual como el cuerpo humano.
+  p La carácterística principal de Ruby es que 
+    b todo es un objeto 
+    |; es decir que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:
+  pre(class="prettyprint lang-ruby")
+    code.
+      3.times { print "FrontEnd Labs - Ruby" }
+  p Como ven el número 3 es interpretado un objeto al cual se le ha aplicado la acción "times"
+    | para que repita la instrucción "print" con el mensaje "FrontEnd Labs - Ruby". En algunos
+    | lenguajes estos tipos de datos son llamados primitivos y no son considerados como objetos.
+  p La segunda carácterística de Ruby es su 
+    b flexibilidad
+    | ; es decir permite a los usuarios alterarlo libremente, de tal forma que pueden quitar, 
+    | agregar, redefinar todas las funcionalidades sin excepción. Por ejemplo:
+  pre(class="prettyprint lang-ruby")
+    code.
+      class Numeric
+        def restar(x)
+          self.-(x)
+        end
+      end
 
-	blockquote
-		p.
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      y = 10.restar 4
+      # ahora y vale 6
+  p La tercera característica son la inclusión de 
+    b bloques 
+    | provenientes de los lenguajes funcionales; 
+    | esto permite a que los metodos tengan la capacidad de ejecutar funcionalidades
+    | a través de listas. Por ejemplo:
+  pre(class="prettyprint lang-ruby")
+    code.
+      redes_sociales = 
+        %w[Facebook Twitter Instagram].map do |red_social|
+          "http://www." + red_social.downcase + ".com"
+        end
+  p El bloque esta definido por todo lo que se encuentra entre las palabras reservadas 
+    span(class="inline_code") do...end
+    | , de tal forma que el método a utilizar realiza particularidades, 
+    | según sea el caso.
+  p La cuarta característica de Ruby es la 
+    b herencia simple
+    | , la cual permite mezcla un módulo e incorporar todos sus metodos gratuitamente.
+    | Por ejemplo:
+  pre(class="prettyprint lang-ruby")
+    code.
+      class MiArray
+        include Enumerable
+      end
+  p Cualquier clase que implemente el método 
+    span(class="inline_code") each
+    | &nbsp;puede incorporar el módulo 
+    span(class="inline_code") Enumerable
+    | , que le agrega un conjunto de métodos que usan 
+    span(class="inline_code") each
+    | &nbsp;para recorrer sus elementos.
+  p Por último 
+    b la apariencia visual 
+    | , se prefiere utilizar las palabras claves en inglés. Ruby no necesita declaraciones de variables. 
+    | Se utilizan las siguientes convenciones para nombre y determinar el alcance de las mismas.
+    ul
+      li 
+        span(class="inline_code") var
+        | &nbsp;puede ser una variable local.
+      li
+        span(class="inline_code") @var
+        | &nbsp;es una variable de instancia.
+      li
+        span(class="inline_code") $var
+        | &nbsp;es una variable global.
 
-	p Con la siguiente instrucción clonaremos nuestro nuevo repositorio Forked, y 
-		b nombraremos 
-		span(class="inline_folder") relay_forked
-		|  a la carpeta que almacenará nuestro proyecto:
+  h3 ¿Quieres probar Ruby?
+  p Existen varías formas para utilizar Ruby, aquí te mencionamos algunas:
+    ol
+      li A través de un navegador utilizando 
+         a(href="http://www.tryruby.org", target="_blank", title="Try Ruby") Try Ruby
+         |.
+      li En Linux/Unix, puedes utilizar el sistema de gestión de paquetes de acuerdo a la distribución que tengas o herramientas de terceros como 
+         a(href="http://rbenv.org", target="_blank", title="rbenv") rbenv 
+         | o 
+         a(href="https://rvm.io", target="_blank", title="RVM") RVM
+         |.
+      li En computadoras con sistema operativo OS X, puedes utilizar herramientas de terceros como 
+         a(href="http://rbenv.org", target="_blank", title="rbenv") rbenv 
+         | o 
+         a(href="https://rvm.io", target="_blank", title="RVM") RVM
+         |.
+      li En computadoras con sistema operativo Windows, puedes utilizar 
+         a(href="http://rubyinstaller.org", target="_blank", title="rubyinstaller") rubyinstaller
+         |.
+      li Compilando Ruby desde el código fuente en su versión 
+         a(href="https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.0.tar.gz", target="_blank", title="Ruby 2.3.0") 2.3.0
+         |.
 
-	p
-		img(class="aligncenter", src="http://frontendlabs.io/wp-content/uploads/2016/02/fork-github-repository.png", alt="fork-github-repository")
+  h3 Operadores Aritméticos
+  table
+    thead
+      tr
+        th Operador
+        th Descripción
+        th Ejemplo
+        th Resultado
+    tbody
+      tr
+        td +
+        td Suma
+        td 4 + 9
+        td 13
+      tr
+        td -
+        td Resta
+        td 5 - 2
+        td 3
+      tr
+        td *
+        td Multiplicación
+        td 3 * 8
+        td 24
+      tr
+        td **
+        td Potencia
+        td 4 ** 2
+        td 16
+      tr
+        td /
+        td División
+        td 8.4 / 2
+        td 4.2
+      tr 
+        td /
+        td División Entera
+        td 11 / 2
+        td 5
+      tr
+        td %
+        td Módulo
+        td 8 % 3
+        td 2
+  p Como verán se usa el mismo operador (/) para la división entera que para la división. 
+    | Pero hay una diferencia clara, cuando el dividendo es un entero, el resultado va a ser un 
+    | entero; caso contrario el dividendo es un float, el resultado va a ser un float. Hay que 
+    | tener bastante cuidado con esto, ya que se presta a cierta imprecisiones, en caso se quiera 
+    | obtener un resultado float teniendo un dividendo entero es mejor utilizar el parser 
+    span(class="inline_code") to_f
+    |.
+  h3 Clases Básicas de Ruby
+  p Como mencionamos antes todos los elementos de Ruby son objetos y a continuación mencionaremos las clases básicas de Ruby:
+    ol
+      li Entero (
+         span(class="inline_code") Integer
+         | ), los enteros son elementos de un conjunto de números que reune a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
+         ul
+          li 
+            span(class="inline_code") to_i
+            | : Convierte un objeto en un entero.
+          li
+            span(class="inline_code") times {|i| block}
+            | : Itera el bloque determinado, pasando los valores de cero a int - 1.
+            pre(class="prettyprint lang-ruby")
+              code.
+                4.times do |i|
+                  print i, " "
+                end
+                #=> 0 1 2 3
+          li
+            span(class="inline_code") downto(limit) {|i| block}
+            | : Itera el bloque determinado, pasando valores decrecientes del entero descendiendo hasta el límite.
+            pre(class="prettyprint lang-ruby")
+              code.
+                6.downto(3){|n| print n, ".."}
+                #=> 6.. 5.. 4.. 3..
+          li
+            span(class="inline_code") upto(limit) {|i| block}
+            | : Itera el bloque determinado, pasando valores crecientes del entero ascendiendo hasta el límite.
+            pre(class="prettyprint lang-ruby")
+              code.
+                2.upto(6){|n| print n, " "}
+                #=> 2 3 4 5 6
+          li
+            span(class="inline_code") gcd(int2)
+            | : Retorna el máximo común divisor (siempre positivo).
+            pre(class="prettyprint lang-ruby")
+              code.
+                4.gcd(2)
+                #=> 2
+          li
+            span(class="inline_code") lcm(int2)
+            | : Retorna el mínimo común multiplo (siempre positivo).
+            pre(class="prettyprint lang-ruby")
+              code.
+                6.lcm(4)
+                #=> 12
+      li Real (
+         span(class="inline_code") Float
+         | ), los reales incluten tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
+         ul
+          li 
+            span(class="inline_code") to_f
+            | : Convierte un objeto en un float.
+          li
+            span(class="inline_code") ceil
+            | : Retorna el menor entero mayor o igual al real.
+            pre(class="prettyprint lang-ruby")
+              code.
+                2.3.ceil    #=> 3
+                3.0.ceil    #=> 3
+                (-2.8).ceil #=> -2
+          li
+            span(class="inline_code") floor
+            | : Retorna el mayor entero menor o igual al real.
+            pre(class="prettyprint lang-ruby")
+              code.
+                2.3.floor    #=> 2
+                3.0.floor    #=> 3
+                (-2.8).floor #=> -3
+          li
+            span(class="inline_code") round([ndigits])
+            | : Retorna el entero a una determinada precisión en digitos decimales.
+            pre(class="prettyprint lang-ruby")
+              code.
+                2.3.round    #=> 2
+                3.8.round    #=> 4
+                (-2.3).round #=> -2
 
+                1.234567.round(2) #=> 1.23
+                1.234567.round(3) #=> 1.235
+                1.234567.round(4) #=> 1.2346
 
-	h2 Referencias bibliográficas
-	p	GITHUB HELP. 
-		i Fork A Repo. 
-		| [En línea] [Fecha de consulta: 12 de Febrero del 2016]. 
-		br
-		|Disponible en: 
-		a(href="https://help.github.com/articles/fork-a-repo/", target="_blank", title="fork a repo - github") fork a repo - github
-		|.
+                34567.89.round(-5) #=> 0
+                34567.89.round(-4) #=> 30000
+                34567.89.round(-3) #=> 35000
+          li
+            span(class="inline_code") rationalize
+            | : Retorna una aproximación más simple del valor.
+            pre(class="prettyprint lang-ruby")
+              code.
+                0.3.rationalize   #=> (3/10)
+                1.333.rationalize #=> (1333/1000)
+        li Complejo (
+           span(class="inline_code") Complex
+           | ), los complejos son una extensión de los números reales. Y son representados como la suma de un número real y un número imaginario. Se define de la siguiente forma:
+           pre(class="prettyprint lang-ruby")
+            code.
+              Complex(1)                     #=> (1 + 0i)
+              Complex(2, 3)                  #=> (2 + 3i)
+              Complex.polar(3, 0)           #=> (3.0 + 0.0i)
+              Complex.polar(3, Math::PI/2) #=> (1.836909530733566e-16 + 3.0i)
+
+           | A continuación se mencionaran los ḿétodos más importantes:
+           ul
+            li
+              span(class="inline_code") to_c
+              | : Convierte un objeto en un complejo.
+            li
+              span(class="inline_code") cmp + numeric -> complex
+              | : Realiza la adición.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  Complex(2, 3)  + Complex(2, 3) #=> (4 + 6i)
+                  Complex(900)   + Complex(1)    #=> (901 + 0i)
+                  Complex(20, 9) + 9.8            #=> (29.8 + 9i)
+            li
+              span(class="inline_code") cmp - numeric -> complex
+              | : Realiza la substracción.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  Complex(2, 3)  - Complex(2, 3) #=> (0 + 0i)
+                  Complex(900)   - Complex(1)    #=> (899 + 0i)
+                  Complex(20, 9) - 9.8            #=> (10.2 + 9i)
+            li
+              span(class="inline_code") cmp * numeric -> complex
+              | : Realiza la multiplicación.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  Complex(2, 3)  * Complex(2, 3) #=> (-5 + 12i)
+                  Complex(900)   * Complex(1)    #=> (900 + 0i)
+                  Complex(20, 9) * 9.8            #=> (196.0 + 88.2i)
+            li
+              span(class="inline_code") cmp / numeric -> complex
+              | : Realiza la división.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  Complex(2, 3)  / Complex(2, 3) #=> (1 + 0i)
+                  Complex(900)   / Complex(1)    #=> (900 + 0i)
+                  Complex(20, 9) / 9.8            #=> (2.0408163265306123 + 0.9183673469387754i)
+            li
+              span(class="inline_code") cmp ** numeric -> complex
+              | : Realiza la exponenciación.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  Complex('i') ** 2              #=> (-1 + 0i)
+                  Complex(-8) ** Rational(1, 3) #=> (1.0000000000000002+1.7320508075688772i)
+        li Cadenas (
+           span(class="inline_code") String
+           | ), manipulan una secuencia de caracteres. Son representados utilizando comilles dobles (" ") o comillas simples (' '). A continuación se mencionaran los ḿétodos más importantes:
+           ul
+            li
+              span(class="inline_code") to_s
+              | : Convierte un objeto en una cadena.
+            li
+              span(class="inline_code") size
+              | : Retorna el tamaño de la cadena.
+            li
+              span(class="inline_code") str + otro_str -> nuevo_str
+              | : Retorna un nueva cadena concatenando las otras.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "Frontend " + "labs" #=> "Frontend labs"
+            li
+              span(class="inline_code") delete([otro_str]+) -> nuevo_str
+              | : Retorna una copia de la cadena eliminando los argumentos que lo intersectan.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "hello".delete "l","lo" #=> "heo"
+                  "hello".delete "lo"     #=> "he"
+                  "hello".delete "ej-m"   #=> "ho"
+            li
+              span(class="inline_code") delete([otro_str]+) -> nuevo_str
+              | : Retorna una copia de la cadena eliminando los argumentos que lo intersectan.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "hello".delete "l","lo" #=> "heo"
+                  "hello".delete "lo"     #=> "he"
+                  "hello".delete "ej-m"   #=> "ho"
+            li
+              span(class="inline_code") capitalize -> nuevo_str
+              | : Retorna una copia de la cadena con el primer carácter convertido en mayúscula y el resto en minúscula.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "hello".capitalize  #=> "Hello"
+                  "HELLO".capitalize  #=> "Hello"
+                  "123ABC".capitalize #=> "123abc"
+            li
+              span(class="inline_code") downcase -> nuevo_str
+              | : Retorna una copia de la cadena con todos los caracteres en minúscula.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "hELLo".capitalize  #=> "hello"
+            li
+              span(class="inline_code") upcase -> nuevo_str
+              | : Retorna una copia de la cadena con todos los caracteres en mayúscula.
+              pre(class="prettyprint lang-ruby")
+                code.
+                  "hELLo".capitalize  #=> "HELLO"
+        li Booleano (
+           span(class="inline_code") TrueClass
+           | &nbsp;o 
+           span(class="inline_code") FalseClass
+           | ), este tipo de variable solo pueden ser de dos tipos true o false.
+  p Vale la aclaración que Ruby es un lenguaje sensitivo, es decir que distingue mayúsculas y minúsculas. Así que hay que tener mucho cuidado con eso para las declaraciones. 
+  p Este es el primer tutorial de 
+    b Ruby 
+    | en español dentro de 
+    b FrontEnd Labs
+    |, espero les guste para poder seguir desarrollando otros aspectos de Ruby y tener un conocimiento importante para luego seguir con el plato fuerte que es 
+    b Ruby on Rails.
+
