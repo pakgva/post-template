@@ -6,13 +6,13 @@ block post
     | se siente natural al leerla y fácil al escribirla". Este lenguaje fue creado por 
     a(href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto") Yukihiro "Matz" Matsumoto
     | , quien combinó sus lenguajes 
-    | favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creo uno nuevo que incluyera los paradigmas
-    | de programación funcional como imperativa.
+    | favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creó uno nuevo que incluyera los paradigmas
+    | de programación funcional, como imperativa.
   p Desde su publicación en 1995, Ruby ha incrementado año tras año la cantidad de adeptos 
     | programadores. Considerándolo ya en el top 10 de lenguajes según el 
     a(href="http://www.tiobe.com/tiobe_index?page=index") índice TIOBE.com
     | .
-  p Muchos definen a Ruby un lenguaje simple en apariencia, pero complejo por dentro; tal igual como el cuerpo humano.
+  p Muchos definen a Ruby un lenguaje simple en apariencia, pero complejo por dentro; al igual que el cuerpo humano.
   p La característica principal de Ruby es que 
     b todo es un objeto
     | ; es decir, que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:
@@ -70,7 +70,7 @@ block post
   p Por último 
     b la apariencia visual
     | , se prefiere utilizar las palabras claves en inglés. Ruby no necesita declaraciones de variables. 
-    | Se utilizan las siguientes convenciones para nombre y determinar el alcance de las mismas.
+    | Se utilizan las siguientes convenciones para nombrar y determinar el alcance de las mismas.
     ul
       li 
         span(class="inline_code") var
@@ -161,7 +161,6 @@ block post
     ol
       li Entero (
          span(class="inline_code") Integer
-         | ), los enteros son elementos de un conjunto de números que reúne a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
          ul
           li 
             span(class="inline_code") to_i
@@ -205,7 +204,7 @@ block post
                 #=> 12
       li Real (
          span(class="inline_code") Float
-         | ), los reales incluyen tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
+         | ), los reales incluyen tanto a los números enteros, racionales e irracionales. A continuación se mencionan los métodos más importantes:
          ul
           li 
             span(class="inline_code") to_f
@@ -259,7 +258,7 @@ block post
               Complex.polar(3, 0)           #=> (3.0 + 0.0i)
               Complex.polar(3, Math::PI/2) #=> (1.836909530733566e-16 + 3.0i)
 
-           | A continuación se mencionaran los ḿétodos más importantes:
+           | A continuación se mencionan los ḿétodos más importantes:
            ul
             li
               span(class="inline_code") to_c
@@ -305,7 +304,7 @@ block post
                   Complex(-8) ** Rational(1, 3) #=> (1.0000000000000002+1.7320508075688772i)
         li Cadenas (
            span(class="inline_code") String
-           | ), manipulan una secuencia de caracteres. Son representados utilizando comillas dobles (" ") o comillas simples (' '). A continuación se mencionaran los métodos más importantes:
+           | ), manipulan una secuencia de caracteres. Son representados utilizando comillas dobles (" ") o comillas simples (' '). A continuación se mencionan los métodos más importantes:
            ul
             li
               span(class="inline_code") to_s
@@ -324,47 +323,39 @@ block post
               | : Retorna una copia de la cadena eliminando los argumentos que lo intersectan.
               pre(class="prettyprint lang-ruby")
                 code.
-                  "hello".delete "l","lo" #=> "heo"
-                  "hello".delete "lo"     #=> "he"
-                  "hello".delete "ej-m"   #=> "ho"
-            li
-              span(class="inline_code") delete([otro_str]+) -> nuevo_str
-              | : Retorna una copia de la cadena eliminando los argumentos que lo intersectan.
-              pre(class="prettyprint lang-ruby")
-                code.
-                  "hello".delete "l","lo" #=> "heo"
-                  "hello".delete "lo"     #=> "he"
-                  "hello".delete "ej-m"   #=> "ho"
+                  "frontend labs".delete "l","la" #=> "frontend abs"
+                  "frontend labs".delete "lo"     #=> "frontend bs"
+                  "frontend labs".delete "ej-m"   #=> "frontnd abs"
             li
               span(class="inline_code") capitalize -> nuevo_str
               | : Retorna una copia de la cadena con el primer carácter convertido en mayúscula y el resto en minúscula.
               pre(class="prettyprint lang-ruby")
                 code.
-                  "hello".capitalize  #=> "Hello"
-                  "HELLO".capitalize  #=> "Hello"
-                  "123ABC".capitalize #=> "123abc"
+                  "frontend labs".capitalize    #=> "Frontend labs"
+                  "FRONTEND LABS".capitalize    #=> "Frontend labs"
+                  "123FRONTEND LABS".capitalize #=> "123frontend labs"
             li
               span(class="inline_code") downcase -> nuevo_str
               | : Retorna una copia de la cadena con todos los caracteres en minúscula.
               pre(class="prettyprint lang-ruby")
                 code.
-                  "hELLo".capitalize  #=> "hello"
+                  "FrontEnd Labs".downcase #=> "frontend labs"
             li
               span(class="inline_code") upcase -> nuevo_str
               | : Retorna una copia de la cadena con todos los caracteres en mayúscula.
               pre(class="prettyprint lang-ruby")
                 code.
-                  "hELLo".capitalize  #=> "HELLO"
+                  "FrontEnd Labs".upcase #=> "FRONTEND LABS"
         li Booleano (
            span(class="inline_code") TrueClass
            | &nbsp;o 
            span(class="inline_code") FalseClass
-           | ), este tipo de variable solo pueden ser de dos tipos true o false.
+           | ), este tipo de variable sólo puede ser de dos tipos true o false.
   p Vale la aclaración que Ruby es un lenguaje sensitivo, es decir que distingue mayúsculas y minúsculas. Así que hay que tener mucho cuidado con eso para las declaraciones. 
   p Este es el primer tutorial de 
     b Ruby 
     | en español dentro de 
     b FrontEnd Labs
-    |, espero les guste para poder seguir desarrollando otros aspectos de Ruby y tener un conocimiento importante para luego seguir con el plato fuerte que es 
+    |, espero que les guste para poder seguir desarrollando otros aspectos de Ruby y así tener un conocimiento sólido para luego seguir con el plato fuerte que es 
     b Ruby on Rails.
 
