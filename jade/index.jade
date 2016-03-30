@@ -2,29 +2,30 @@ extends ./jade/_layout.jade
 block post
   //- aquí empieza el contenido del post
   p Según ruby-lang.org, "Ruby es un lenguaje de programación dinámico y de código 
-    | abierto enfocado en la simplicidad y la productividad. Su elegenate sintaxis 
+    | abierto enfocado en la simplicidad y la productividad. Su elegante sintaxis 
     | se siente natural al leerla y fácil al escribirla". Este lenguaje fue creado por 
-    a(href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto") Yukihiro "Matz" Matsumoto, quien combinó sus lenguajes 
+    a(href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto") Yukihiro "Matz" Matsumoto
+    | , quien combinó sus lenguajes 
     | favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creo uno nuevo que incluyera los paradigmas
     | de programación funcional como imperativa.
   p Desde su publicación en 1995, Ruby ha incrementado año tras año la cantidad de adeptos 
-    | programadores. Considerandolo ya en el top 10 de lenguajes segun el 
+    | programadores. Considerándolo ya en el top 10 de lenguajes según el 
     a(href="http://www.tiobe.com/tiobe_index?page=index") índice TIOBE.com
     | .
   p Muchos definen a Ruby un lenguaje simple en apariencia, pero complejo por dentro; tal igual como el cuerpo humano.
-  p La carácterística principal de Ruby es que 
-    b todo es un objeto 
-    |; es decir que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:
+  p La característica principal de Ruby es que 
+    b todo es un objeto
+    | ; es decir, que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:
   pre(class="prettyprint lang-ruby")
     code.
       3.times { print "FrontEnd Labs - Ruby" }
   p Como ven el número 3 es interpretado un objeto al cual se le ha aplicado la acción "times"
     | para que repita la instrucción "print" con el mensaje "FrontEnd Labs - Ruby". En algunos
     | lenguajes estos tipos de datos son llamados primitivos y no son considerados como objetos.
-  p La segunda carácterística de Ruby es su 
+  p La segunda característica de Ruby es su 
     b flexibilidad
     | ; es decir permite a los usuarios alterarlo libremente, de tal forma que pueden quitar, 
-    | agregar, redefinar todas las funcionalidades sin excepción. Por ejemplo:
+    | agregar, redefinir todas las funcionalidades sin excepción. Por ejemplo:
   pre(class="prettyprint lang-ruby")
     code.
       class Numeric
@@ -38,7 +39,7 @@ block post
   p La tercera característica son la inclusión de 
     b bloques 
     | provenientes de los lenguajes funcionales; 
-    | esto permite a que los metodos tengan la capacidad de ejecutar funcionalidades
+    | esto permite a que los métodos tengan la capacidad de ejecutar funcionalidades
     | a través de listas. Por ejemplo:
   pre(class="prettyprint lang-ruby")
     code.
@@ -46,13 +47,13 @@ block post
         %w[Facebook Twitter Instagram].map do |red_social|
           "http://www." + red_social.downcase + ".com"
         end
-  p El bloque esta definido por todo lo que se encuentra entre las palabras reservadas 
+  p El bloque está definido por todo lo que se encuentra entre las palabras reservadas 
     span(class="inline_code") do...end
     | , de tal forma que el método a utilizar realiza particularidades, 
     | según sea el caso.
   p La cuarta característica de Ruby es la 
     b herencia simple
-    | , la cual permite mezcla un módulo e incorporar todos sus metodos gratuitamente.
+    | , la cual permite mezcla un módulo e incorporar todos sus métodos gratuitamente.
     | Por ejemplo:
   pre(class="prettyprint lang-ruby")
     code.
@@ -67,7 +68,7 @@ block post
     span(class="inline_code") each
     | &nbsp;para recorrer sus elementos.
   p Por último 
-    b la apariencia visual 
+    b la apariencia visual
     | , se prefiere utilizar las palabras claves en inglés. Ruby no necesita declaraciones de variables. 
     | Se utilizan las siguientes convenciones para nombre y determinar el alcance de las mismas.
     ul
@@ -82,7 +83,7 @@ block post
         | &nbsp;es una variable global.
 
   h3 ¿Quieres probar Ruby?
-  p Existen varías formas para utilizar Ruby, aquí te mencionamos algunas:
+  p Existen varias formas para utilizar Ruby, aquí te mencionamos algunas:
     ol
       li A través de un navegador utilizando 
          a(href="http://www.tryruby.org", target="_blank", title="Try Ruby") Try Ruby
@@ -94,7 +95,7 @@ block post
          |.
       li En computadoras con sistema operativo OS X, puedes utilizar herramientas de terceros como 
          a(href="http://rbenv.org", target="_blank", title="rbenv") rbenv 
-         | o 
+         | o  
          a(href="https://rvm.io", target="_blank", title="RVM") RVM
          |.
       li En computadoras con sistema operativo Windows, puedes utilizar 
@@ -160,7 +161,7 @@ block post
     ol
       li Entero (
          span(class="inline_code") Integer
-         | ), los enteros son elementos de un conjunto de números que reune a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
+         | ), los enteros son elementos de un conjunto de números que reúne a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
          ul
           li 
             span(class="inline_code") to_i
@@ -197,14 +198,14 @@ block post
                 #=> 2
           li
             span(class="inline_code") lcm(int2)
-            | : Retorna el mínimo común multiplo (siempre positivo).
+            | : Retorna el mínimo común múltiplo (siempre positivo).
             pre(class="prettyprint lang-ruby")
               code.
                 6.lcm(4)
                 #=> 12
       li Real (
          span(class="inline_code") Float
-         | ), los reales incluten tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
+         | ), los reales incluyen tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
          ul
           li 
             span(class="inline_code") to_f
@@ -227,7 +228,7 @@ block post
                 (-2.8).floor #=> -3
           li
             span(class="inline_code") round([ndigits])
-            | : Retorna el entero a una determinada precisión en digitos decimales.
+            | : Retorna el entero a una determinada precisión en dígitos decimales.
             pre(class="prettyprint lang-ruby")
               code.
                 2.3.round    #=> 2
@@ -304,7 +305,7 @@ block post
                   Complex(-8) ** Rational(1, 3) #=> (1.0000000000000002+1.7320508075688772i)
         li Cadenas (
            span(class="inline_code") String
-           | ), manipulan una secuencia de caracteres. Son representados utilizando comilles dobles (" ") o comillas simples (' '). A continuación se mencionaran los ḿétodos más importantes:
+           | ), manipulan una secuencia de caracteres. Son representados utilizando comillas dobles (" ") o comillas simples (' '). A continuación se mencionaran los métodos más importantes:
            ul
             li
               span(class="inline_code") to_s
@@ -314,7 +315,7 @@ block post
               | : Retorna el tamaño de la cadena.
             li
               span(class="inline_code") str + otro_str -> nuevo_str
-              | : Retorna un nueva cadena concatenando las otras.
+              | : Retorna una nueva cadena concatenando las otras.
               pre(class="prettyprint lang-ruby")
                 code.
                   "Frontend " + "labs" #=> "Frontend labs"

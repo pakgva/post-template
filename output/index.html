@@ -35,24 +35,25 @@
           <!-- begin-->
           <p>
             Según ruby-lang.org, "Ruby es un lenguaje de programación dinámico y de código 
-            abierto enfocado en la simplicidad y la productividad. Su elegenate sintaxis 
-            se siente natural al leerla y fácil al escribirla". Este lenguaje fue creado por <a href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto">Yukihiro "Matz" Matsumoto, quien combinó sus lenguajes </a>favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creo uno nuevo que incluyera los paradigmas
+            abierto enfocado en la simplicidad y la productividad. Su elegante sintaxis 
+            se siente natural al leerla y fácil al escribirla". Este lenguaje fue creado por <a href="https://es.wikipedia.org/wiki/Yukihiro_Matsumoto">Yukihiro "Matz" Matsumoto</a>, quien combinó sus lenguajes 
+            favoritos (Perl, Smalltalk, Eiffel, Ada y Lisp) y creo uno nuevo que incluyera los paradigmas
             de programación funcional como imperativa.
           </p>
           <p>
             Desde su publicación en 1995, Ruby ha incrementado año tras año la cantidad de adeptos 
-            programadores. Considerandolo ya en el top 10 de lenguajes segun el <a href="http://www.tiobe.com/tiobe_index?page=index">índice TIOBE.com</a>.
+            programadores. Considerándolo ya en el top 10 de lenguajes según el <a href="http://www.tiobe.com/tiobe_index?page=index">índice TIOBE.com</a>.
           </p>
           <p>Muchos definen a Ruby un lenguaje simple en apariencia, pero complejo por dentro; tal igual como el cuerpo humano.</p>
-          <p>La carácterística principal de Ruby es que <b>todo es un objeto </b>; es decir que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:</p>
+          <p>La característica principal de Ruby es que <b>todo es un objeto</b>; es decir, que se puede asignar propiedades y acciones a toda la información y código. Por ejemplo:</p>
           <pre class="prettyprint lang-ruby"><code>3.times { print "FrontEnd Labs - Ruby" }</code></pre>
           <p>
             Como ven el número 3 es interpretado un objeto al cual se le ha aplicado la acción "times"
             para que repita la instrucción "print" con el mensaje "FrontEnd Labs - Ruby". En algunos
             lenguajes estos tipos de datos son llamados primitivos y no son considerados como objetos.
           </p>
-          <p>La segunda carácterística de Ruby es su <b>flexibilidad</b>; es decir permite a los usuarios alterarlo libremente, de tal forma que pueden quitar, 
-            agregar, redefinar todas las funcionalidades sin excepción. Por ejemplo:
+          <p>La segunda característica de Ruby es su <b>flexibilidad</b>; es decir permite a los usuarios alterarlo libremente, de tal forma que pueden quitar, 
+            agregar, redefinir todas las funcionalidades sin excepción. Por ejemplo:
           </p>
           <pre class="prettyprint lang-ruby"><code>class Numeric
   def restar(x)
@@ -63,24 +64,24 @@ end
 y = 10.restar 4
 # ahora y vale 6</code></pre>
           <p>La tercera característica son la inclusión de <b>bloques </b>provenientes de los lenguajes funcionales; 
-            esto permite a que los metodos tengan la capacidad de ejecutar funcionalidades
+            esto permite a que los métodos tengan la capacidad de ejecutar funcionalidades
             a través de listas. Por ejemplo:
           </p>
           <pre class="prettyprint lang-ruby"><code>redes_sociales = 
   %w[Facebook Twitter Instagram].map do |red_social|
     "http://www." + red_social.downcase + ".com"
   end</code></pre>
-          <p>El bloque esta definido por todo lo que se encuentra entre las palabras reservadas <span class="inline_code">do...end</span>, de tal forma que el método a utilizar realiza particularidades, 
+          <p>El bloque está definido por todo lo que se encuentra entre las palabras reservadas <span class="inline_code">do...end</span>, de tal forma que el método a utilizar realiza particularidades, 
             según sea el caso.
           </p>
-          <p>La cuarta característica de Ruby es la <b>herencia simple</b>, la cual permite mezcla un módulo e incorporar todos sus metodos gratuitamente.
+          <p>La cuarta característica de Ruby es la <b>herencia simple</b>, la cual permite mezcla un módulo e incorporar todos sus métodos gratuitamente.
             Por ejemplo:
           </p>
           <pre class="prettyprint lang-ruby"><code>class MiArray
   include Enumerable
 end</code></pre>
           <p>Cualquier clase que implemente el método <span class="inline_code">each</span>&nbsp;puede incorporar el módulo <span class="inline_code">Enumerable</span>, que le agrega un conjunto de métodos que usan <span class="inline_code">each</span>&nbsp;para recorrer sus elementos.</p>
-          <p>Por último <b>la apariencia visual </b>, se prefiere utilizar las palabras claves en inglés. Ruby no necesita declaraciones de variables. 
+          <p>Por último <b>la apariencia visual</b>, se prefiere utilizar las palabras claves en inglés. Ruby no necesita declaraciones de variables. 
             Se utilizan las siguientes convenciones para nombre y determinar el alcance de las mismas.
             <ul>
               <li> <span class="inline_code">var</span>&nbsp;puede ser una variable local.</li>
@@ -89,11 +90,11 @@ end</code></pre>
             </ul>
           </p>
           <h3>¿Quieres probar Ruby?</h3>
-          <p>Existen varías formas para utilizar Ruby, aquí te mencionamos algunas:
+          <p>Existen varias formas para utilizar Ruby, aquí te mencionamos algunas:
             <ol>
               <li>A través de un navegador utilizando <a href="http://www.tryruby.org" target="_blank" title="Try Ruby">Try Ruby</a>.</li>
               <li>En Linux/Unix, puedes utilizar el sistema de gestión de paquetes de acuerdo a la distribución que tengas o herramientas de terceros como <a href="http://rbenv.org" target="_blank" title="rbenv">rbenv </a>o <a href="https://rvm.io" target="_blank" title="RVM">RVM</a>.</li>
-              <li>En computadoras con sistema operativo OS X, puedes utilizar herramientas de terceros como <a href="http://rbenv.org" target="_blank" title="rbenv">rbenv </a>o <a href="https://rvm.io" target="_blank" title="RVM">RVM</a>.</li>
+              <li>En computadoras con sistema operativo OS X, puedes utilizar herramientas de terceros como <a href="http://rbenv.org" target="_blank" title="rbenv">rbenv </a>o  <a href="https://rvm.io" target="_blank" title="RVM">RVM</a>.</li>
               <li>En computadoras con sistema operativo Windows, puedes utilizar <a href="http://rubyinstaller.org" target="_blank" title="rubyinstaller">rubyinstaller</a>.</li>
               <li>Compilando Ruby desde el código fuente en su versión <a href="https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.0.tar.gz" target="_blank" title="Ruby 2.3.0">2.3.0</a>.</li>
             </ol>
@@ -163,7 +164,7 @@ end</code></pre>
           <h3>Clases Básicas de Ruby</h3>
           <p>Como mencionamos antes todos los elementos de Ruby son objetos y a continuación mencionaremos las clases básicas de Ruby:
             <ol>
-              <li>Entero (<span class="inline_code">Integer</span>), los enteros son elementos de un conjunto de números que reune a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
+              <li>Entero (<span class="inline_code">Integer</span>), los enteros son elementos de un conjunto de números que reúne a los positivos (1, 2, 3 ...), a los negativos (..., -3, -2, -1) y al 0. A continuación se mencionaran los métodos más importantes:
                 <ul>
                   <li> <span class="inline_code">to_i</span>: Convierte un objeto en un entero.</li>
                   <li><span class="inline_code">times {|i| block}</span>: Itera el bloque determinado, pasando los valores de cero a int - 1.
@@ -184,13 +185,13 @@ end
                     <pre class="prettyprint lang-ruby"><code>4.gcd(2)
 #=> 2</code></pre>
                   </li>
-                  <li><span class="inline_code">lcm(int2)</span>: Retorna el mínimo común multiplo (siempre positivo).
+                  <li><span class="inline_code">lcm(int2)</span>: Retorna el mínimo común múltiplo (siempre positivo).
                     <pre class="prettyprint lang-ruby"><code>6.lcm(4)
 #=> 12</code></pre>
                   </li>
                 </ul>
               </li>
-              <li>Real (<span class="inline_code">Float</span>), los reales incluten tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
+              <li>Real (<span class="inline_code">Float</span>), los reales incluyen tanto a los números enteros, racionales e irracionales. A continuación se mencionaran los métodos más importantes:
                 <ul>
                   <li> <span class="inline_code">to_f</span>: Convierte un objeto en un float.</li>
                   <li><span class="inline_code">ceil</span>: Retorna el menor entero mayor o igual al real.
@@ -203,7 +204,7 @@ end
 3.0.floor    #=> 3
 (-2.8).floor #=> -3</code></pre>
                   </li>
-                  <li><span class="inline_code">round([ndigits])</span>: Retorna el entero a una determinada precisión en digitos decimales.
+                  <li><span class="inline_code">round([ndigits])</span>: Retorna el entero a una determinada precisión en dígitos decimales.
                     <pre class="prettyprint lang-ruby"><code>2.3.round    #=> 2
 3.8.round    #=> 4
 (-2.3).round #=> -2
@@ -256,11 +257,11 @@ Complex(-8) ** Rational(1, 3) #=> (1.0000000000000002+1.7320508075688772i)</code
                   </li>
                 </ul>
               </li>
-              <li>Cadenas (<span class="inline_code">String</span>), manipulan una secuencia de caracteres. Son representados utilizando comilles dobles (" ") o comillas simples (' '). A continuación se mencionaran los ḿétodos más importantes:
+              <li>Cadenas (<span class="inline_code">String</span>), manipulan una secuencia de caracteres. Son representados utilizando comillas dobles (" ") o comillas simples (' '). A continuación se mencionaran los métodos más importantes:
                 <ul>
                   <li><span class="inline_code">to_s</span>: Convierte un objeto en una cadena.</li>
                   <li><span class="inline_code">size</span>: Retorna el tamaño de la cadena.</li>
-                  <li><span class="inline_code">str + otro_str -> nuevo_str</span>: Retorna un nueva cadena concatenando las otras.
+                  <li><span class="inline_code">str + otro_str -> nuevo_str</span>: Retorna una nueva cadena concatenando las otras.
                     <pre class="prettyprint lang-ruby"><code>"Frontend " + "labs" #=> "Frontend labs"</code></pre>
                   </li>
                   <li><span class="inline_code">delete([otro_str]+) -> nuevo_str</span>: Retorna una copia de la cadena eliminando los argumentos que lo intersectan.
